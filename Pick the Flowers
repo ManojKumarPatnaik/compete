@@ -1,0 +1,240 @@
+Ananya loves flowers and today it's her birthday. Her best friend Ayushi wants to present her bag full of flowers. The bag can contain only one type of flower. Ayushi has a bunch of flowers in her garden, but due to the restriction of the bag, she can pick flowers of only one kind.
+Ayushi is now confused which type of flowers to pick. So she decides to pick the flowers which has maximum occurence in her garden. Your task is to help her in deciding the type of flower she should pick.
+
+Input Format
+
+A string containing a sequence of lowercase characters denoting the type of flowers in Ayushi's garden.
+
+Constraints
+
+For a string S, 
+
+ 
+  {a, b, c,...z} 
+
+where |S| denotes length of the string and  is the  character of the string.
+Output Format
+
+Output the type of flower having maximum occurence. If more than one type of flower has the maximum occurence, print the lexicographically least type.
+
+Sample Input 0
+
+babcabbcaab
+Sample Output 0
+
+b
+Explanation 0
+
+Flower of type 'b' has the maximum occurence of 5.
+
+Sample Input 1
+
+zwpd
+Sample Output 1
+
+d
+Explanation 1
+
+Here, all types of flowers have equal occurence, so we choose the type which is lexicographically least. So in this case, we choose the type 'd'.
+
+Easy
+Submitted 482 times
+Max Score 25
+Need Help?
+View Discussions
+View Top Submissions
+Rate This Challenge:
+    
+Download problem statement
+Download sample test cases
+Suggest Edits
+Current Buffer (saved locally, editable)     
+ 
+Java 7
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       String s=sc.next();
+        int arr[]=new int[26];
+        int flag=0;
+        for(int i=0;i<s.length();i++)
+        {
+            arr[s.charAt(i)-'a']++;
+        }
+        int max=1,val=0;
+        for(int i=0;i<26;i++)
+        {
+            if(arr[i]>max)
+            {
+                max=arr[i];
+                val=i;
+                flag=1;
+            }
+        }
+        if(flag==0)
+        {
+            for(int i=0;i<26;i++)
+            {
+                if(arr[i]==1)
+                {
+                    display(i);
+                    break;
+                }      
+            }
+        }
+        else 
+        {
+            if(flag==1)
+            {
+                display(val);
+            }
+        }
+        
+        
+    }
+    public static void display(int n)
+    {
+        switch(n){ 
+            case 0:
+                {
+                System.out.println("a");
+                break;
+                }
+                case 1:
+                {
+                System.out.println("b");
+                break;
+                }
+                case 2:
+                {
+                System.out.println("c");
+                break;
+                }
+                case 3:
+                {
+                System.out.println("d");
+                break;
+                }
+                case 4:
+                {
+                System.out.println("e");
+                break;
+                }
+                case 5:
+                {
+                System.out.println("f");
+                break;
+                }
+                case 6:
+                {
+                System.out.println("g");
+                break;
+                }
+                case 7:
+                {
+                System.out.println("h");
+                break;
+                }
+                case 8:
+                {
+                System.out.println("i");
+                break;
+                }
+                case 9:
+                {
+                System.out.println("j");
+                break;
+                }
+                case 10:
+                {
+                System.out.println("k");
+                break;
+                }
+                case 11:
+                {
+                System.out.println("l");
+                break;
+                }
+                case 12:
+                {
+                System.out.println("m");
+                break;
+                }
+                case 13:
+                {
+                System.out.println("n");
+                break;
+                }
+                case 14:
+                {
+                System.out.println("o");
+                break;
+                }
+                case 15:
+                {
+                System.out.println("p");
+                break;
+                }
+                case 16:
+                {
+                System.out.println("q");
+                break;
+                }
+                case 17:
+                {
+                System.out.println("r");
+                break;
+                }
+                case 18:
+                {
+                System.out.println("s");
+                break;
+                }
+                case 19:
+                {
+                System.out.println("t");
+                break;
+                }
+                case 20:
+                {
+                System.out.println("u");
+                break;
+                }
+                case 21:
+                {
+                System.out.println("v");
+                break;
+                }
+                case 22:
+                {
+                System.out.println("w");
+                break;
+                }
+                case 23:
+                {
+                System.out.println("x");
+                break;
+                }
+                case 24:
+                {
+                System.out.println("y");
+                break;
+                }
+                case 25:
+                {
+                System.out.println("z");
+                break;
+                }
+        }
+    
+                
+    }
+}
