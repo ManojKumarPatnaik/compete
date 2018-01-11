@@ -1,0 +1,54 @@
+Pranav goes to a shop to buy candles. The shopkeeper shows him candles of different brightness level. As Pranav hates light, he wants to buy a candle with the minimum brightness. But his wife instructed him not to do so. 
+Now Pranav has to buy a candle which is just brighter than the minimum one. Can you help him in choosing the right candle.
+
+Input Format
+
+The first line contains an integer , denoting the number of candles in the shop. The second line contains  distinct space separated integers , , ...  denoting the brightness level of candles.
+
+Constraints
+
+Output Format
+
+Print the value of the brightness level of the right candle.
+
+Sample Input 0
+
+4
+5 1 4 3
+Sample Output 0
+
+3
+Explanation 0
+
+In this case, although the second candle has the lowest brithness, but due to his wife, he chooses the fourth candle, which is just brighter than the second one.
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+         for(int i=0;i<n-1;i++)
+         {
+             for(int j=i+1;j<n;j++){
+              if(arr[i]>arr[j])
+              {
+                 int temp=arr[i];
+                 arr[i]=arr[j];
+                 arr[j]=temp;  
+                     
+             }
+            }
+         }
+        System.out.println(arr[1]);
+    }
+}
