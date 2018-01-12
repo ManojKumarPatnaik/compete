@@ -1,0 +1,69 @@
+Andrew loves programming and simply immerses himself in all programming problems he could lay his hands on. He sat in a contest recently and came across an interesting problem. The problem was that he was given a string of random letters and his job was to find the maximum number of times he could spell the word "code out" using all the letters.
+
+Note: Andrew could rearrange the letters to form the word "code out" however, every letter can be used once only.
+
+Input Format
+
+The first line of input contains a number n which is the total number of characters present in the string. This is followed by a string consisting of exactly n characters. The string contains all lowercase characters as well as spaces.
+
+Constraints
+
+1<=n<=100000
+
+Output Format
+
+An integer which is the maximum number of times Andrew can spell the word "code out" from the letters provided to him.
+
+Sample Explanation:
+
+In this sample input, we can form "code out" only 1 times, hence the answer is 1.
+
+Sample Input 0
+
+8
+code out
+Sample Output 0
+
+1
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String s = sc.next();
+        s += sc.nextLine();
+        int arr[]=new int[26];
+        if((n%8)==0)
+        {
+            for( int i=0;i<n;i++)
+            {
+                if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') 
+                {
+                arr[s.charAt(i)-'a']++;
+                }
+                
+            }
+            int r=2*arr[2];
+            if((arr[2]==arr[3])&&(arr[3]==arr[4])&&(arr[4]==arr[20])&&(arr[20]==arr[19])&&(arr[14]==r))
+            {
+                
+                System.out.println(arr[2]);
+                
+            }
+            else
+                System.out.println(0);
+        }
+        else
+        {
+            System.out.println(0);
+        }
+        
+    }
+}
